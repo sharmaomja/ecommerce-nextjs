@@ -1,8 +1,12 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  images: {
-    domains: ["res.cloudinary.com"]
-  }
-}
-
-module.exports = nextConfig
+module.exports = {
+  // Other Next.js configurations...
+  // Add the following line:
+  exportPathMap: function () {
+    return {
+      '/': { page: '/' },
+      // Define additional routes here if needed
+    };
+  },
+  // Add this line for static HTML export
+  target: 'experimental-serverless-trace',
+};
